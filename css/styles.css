@@ -134,17 +134,13 @@ nav ul li:hover {
     flex-direction: row;
 }
 
-.instagram,
-.linkedin,
-.github {
+.button {
     border: #b691ff 2px solid;
     padding: 10px 20px;
     border-radius: 8px;
 }   
 
-.instagram:hover,
-.linkedin:hover,
-.github:hover {
+.button:hover {
     background-color: #b691ff;
     color: black;
     transition: background-color 0.5s ease;
