@@ -76,6 +76,31 @@ nav ul li:hover {
     background-color: #45116c;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(151, 86, 255, 0.3);
+    position:relative;
+    overflow: hidden;
+}
+
+.water-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Cor da água */
+     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+    animation: wave 5s infinite linear; /* Animação */
+    pointer-events: none; /* Para que não interfira com cliques */
+}
+@keyframes wave {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(-20px); /* Altura da onda */
+    }
+    100% {
+        transform: translateY(-10px);
+    }
 }
 
 .hero-bottom-content {
