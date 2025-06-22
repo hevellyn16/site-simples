@@ -29,7 +29,6 @@ nav {
     padding: 10px 0;
     margin-bottom: 10px;
     color: white;
-    border-radius: 8px;
 }
 
 nav ul.menu {
@@ -65,7 +64,6 @@ nav ul li:hover {
 }
 .title h1 {
     font-size: inherit;
-    line-height: 1.1;
 }
 
 .hero {
@@ -136,7 +134,7 @@ nav ul li:hover {
     max-width: 300px;
     width: 100%;
     height: auto;
-    border-radius: 50%;
+    border-radius: 100%;
     border: 7px solid #45116c;
     box-shadow: 0 0 50px rgba(135, 71, 255, 1);
     flex-shrink: 0;
