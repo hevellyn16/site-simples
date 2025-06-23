@@ -1,172 +1,294 @@
+/* Importa as fontes 'Bebas Neue' e 'Poppins' do Google Fonts. */
+/* A fonte Poppins é usada para o texto geral, e a Bebas Neue para títulos. */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Regras CSS globais para resetar estilos padrão do navegador. */
 * {
+    /* Remove margens padrão de todos os elementos. */
     margin: 0;
+    /* Remove preenchimento padrão de todos os elementos. */
     padding: 0;
+    /* Garante que o padding e a borda sejam incluídos na largura/altura total do elemento. */
     box-sizing: border-box;
 }
 
+/* Estilos para links (âncoras). */
 a {
+    /* Herda a cor do texto do elemento pai. */
     color: inherit;
+    /* Remove o sublinhado padrão dos links. */
     text-decoration: none;
 }
 
+/* Estilos para listas não ordenadas. */
 ul {
+    /* Remove os marcadores de lista padrão (bolinhas, quadrados, etc.). */
     list-style: none;
 }
 
+/* Estilos para o corpo da página (body). */
 body {
+    /* Define a cor de fundo preta para toda a página. */
     background-color: black;
+    /* Aplica a fonte 'Poppins' como principal, com fallback para fontes sans-serif. */
     font-family: "Poppins", sans-serif;
+    /* Define a cor do texto padrão como branco. */
     color: white;
+    /* Previne a rolagem horizontal indesejada, ocultando qualquer conteúdo que transborde. */
     overflow-x: hidden;
 }
 
+/* Estilos para a barra de navegação. */
 nav {
+    /* Usa Flexbox para organizar os itens da navegação. */
     display: flex;
+    /* Distribui o espaço entre os itens da navegação (logo e menu). */
     justify-content: space-between;
+    /* Centraliza verticalmente os itens da navegação. */
     align-items: center;
+    /* Adiciona padding superior e inferior. */
     padding: 10px 0;
+    /* Adiciona margem inferior para separar da próxima seção. */
     margin-bottom: 10px;
+    /* Define a cor do texto da navegação como branco. */
     color: white;
 }
 
+/* Estilos para o menu (lista de links) dentro da navegação. */
 nav ul.menu {
+    /* Usa Flexbox para organizar os itens do menu horizontalmente. */
     display: flex;
+    /* Adiciona espaço entre os itens do menu. */
     gap: 20px;
 }
 
+/* Estilos para cada item de lista (link) dentro do menu da navegação. */
 nav ul li {
+    /* Define o peso da fonte. */
     font-weight: 500;
+    /* Adiciona uma transição suave para a cor ao passar o mouse. */
     transition: color 0.3s ease;
+    /* Define o tamanho da fonte. */
     font-size: 1rem;
 }
 
+/* Estilos para o item de lista do menu quando o mouse passa sobre ele (hover). */
 nav ul li:hover {
+    /* Altera a cor do texto para um tom de roxo claro. */
     color: #8747ff;
 }
 
+/* Estilos para o container principal que centraliza o conteúdo. */
 .container {
+    /* Define a largura máxima do container. */
     max-width: 1400px;
+    /* Ocupa 100% da largura disponível até o max-width. */
     width: 100%;
+    /* Centraliza o container horizontalmente. */
     margin: 0 auto;
+    /* Adiciona padding horizontal para evitar que o conteúdo encoste nas bordas da tela. */
     padding: 0 40px;
+    /* Define a posição como relativa para posicionamento de elementos filhos. */
     position: relative;
 }
 
+/* Estilos para títulos gerais da página. */
 .title {
+    /* Aplica a fonte 'Bebas Neue' para o título. */
     font-family: 'Bebas Neue', sans-serif;
+    /* Define o tamanho da fonte do título. */
     font-size: 2.5rem;
+    /* Define a cor do título. */
     color: #b691ff;
+    /* Remove margem superior. */
     margin-top: 0px;
+    /* Adiciona margem inferior para separar do conteúdo. */
     margin-bottom: 30px;
+    /* Centraliza o texto do título. */
     text-align: center;
 }
+
+/* Garante que o tamanho da fonte do h1 dentro de .title seja herdado. */
 .title h1 {
     font-size: inherit;
 }
 
+/* Estilos para a seção hero (seção principal/destaque da página). */
 .hero {
+    /* Usa Flexbox para organizar o conteúdo verticalmente. */
     display: flex;
+    /* Define a direção dos itens como coluna. */
     flex-direction: column;
+    /* Centraliza os itens horizontalmente. */
     align-items: center;
+    /* Centraliza os itens verticalmente. */
     justify-content: center;
+    /* Define uma altura mínima para ocupar a maior parte da viewport, ajustando para a navegação. */
     min-height: calc(100vh - 200px);
+    /* Adiciona padding interno. */
     padding: 80px 80px;
+    /* Define a cor de fundo da seção hero. */
     background-color: #45116c;
+    /* Arredonda as bordas da seção. */
     border-radius: 8px;
+    /* Adiciona uma sombra para um efeito visual. */
     box-shadow: 0 0 30px rgba(151, 86, 255, 0.3);
-    position:relative;
+    /* Define a posição como relativa para posicionar o efeito de água. */
+    position: relative;
+    /* Oculta qualquer conteúdo que transborde (importante para o efeito de água). */
     overflow: hidden;
 }
 
+/* Estilos para o efeito de água flutuante na seção hero. */
 .water-effect {
+    /* Posiciona o elemento absolutamente no canto superior esquerdo do elemento pai (.hero). */
     position: absolute;
     top: 0;
     left: 0;
+    /* Ocupa 100% da largura e altura do elemento pai. */
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1); /* Cor da água */
-     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
-    animation: wave 5s infinite linear; /* Animação */
-    pointer-events: none; /* Para que não interfira com cliques */
+    /* Define um fundo translúcido para simular a água. */
+    background: rgba(255, 255, 255, 0.1);
+    /* Adiciona uma sombra interna para um efeito de profundidade. */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+    /* Aplica a animação 'wave' por 5 segundos, repetindo infinitamente e linearmente. */
+    animation: wave 5s infinite linear;
+    /* Garante que o efeito não interfira com eventos de clique. */
+    pointer-events: none;
 }
+
+/* Definição da animação 'wave' para o efeito de água. */
 @keyframes wave {
+    /* No início da animação (0%). */
     0% {
+        /* Move o elemento 10px para cima. */
         transform: translateY(-10px);
     }
+    /* Na metade da animação (50%). */
     50% {
-        transform: translateY(-20px); /* Altura da onda */
+        /* Move o elemento 20px para cima (altura máxima da onda). */
+        transform: translateY(-20px);
     }
+    /* No final da animação (100%), retorna ao estado inicial. */
     100% {
         transform: translateY(-10px);
     }
 }
 
+/* Estilos para o conteúdo inferior da seção hero (texto e imagem). */
 .hero-bottom-content {
+    /* Usa Flexbox para organizar o conteúdo. */
     display: flex;
+    /* Define a direção dos itens como linha. */
     flex-direction: row;
+    /* Centraliza os itens horizontalmente. */
     align-items: center;
+    /* Centraliza os itens verticalmente. */
     justify-content: center;
+    /* Permite que os itens quebrem para a próxima linha em telas menores. */
     flex-wrap: wrap;
+    /* Adiciona espaço entre os itens. */
     gap: 80px;
+    /* Ocupa 100% da largura disponível. */
     width: 100%;
 }
 
+/* Estilos para o bloco de texto na seção hero. */
 .hero-text {
+    /* Define a largura máxima do texto. */
     max-width: 650px;
+    /* Alinha o texto à esquerda. */
     text-align: left;
+    /* Permite que o texto encolha se não houver espaço suficiente. */
     flex-shrink: 1;
+    /* Permite que o texto cresça para preencher o espaço. */
     flex-grow: 1;
 }
 
+/* Estilos para parágrafos dentro do bloco de texto da seção hero. */
 .hero-text p {
+    /* Define o tamanho da fonte. */
     font-size: 1.2rem;
+    /* Define a altura da linha para melhor legibilidade. */
     line-height: 1.7;
+    /* Adiciona margem inferior para separar os parágrafos. */
     margin-bottom: 1.2em;
 }
 
-.hero-text p:last-child{
+/* Remove a margem inferior do último parágrafo para evitar espaçamento extra. */
+.hero-text p:last-child {
     margin-bottom: 0;
 }
 
+/* Estilos para a imagem na seção hero. */
 .hero-image {
+    /* Define a largura máxima da imagem. */
     max-width: 300px;
+    /* Ocupa 100% da largura disponível até o max-width. */
     width: 100%;
+    /* Ajusta a altura automaticamente para manter a proporção. */
     height: auto;
+    /* Torna a imagem redonda. */
     border-radius: 100%;
+    /* Adiciona uma borda à imagem. */
     border: 7px solid #45116c;
+    /* Adiciona uma sombra brilhante à imagem. */
     box-shadow: 0 0 50px rgba(135, 71, 255, 1);
+    /* Previne que a imagem encolha. */
     flex-shrink: 0;
+    /* Garante que a imagem preencha o container sem distorção. */
     object-fit: cover;
 }
 
+/* Estilos para a seção de contato. */
 .contact {
+    /* Usa Flexbox para organizar o conteúdo verticalmente. */
     display: flex;
+    /* Define a direção dos itens como coluna. */
     flex-direction: column;
+    /* Centraliza os itens horizontalmente. */
     justify-content: center;
+    /* Centraliza os itens verticalmente. */
     align-items: center;
+    /* Adiciona padding interno. */
     padding: 20px 0;
+    /* Adiciona margem superior para separar da seção anterior. */
     margin-top: 20px;
+    /* Define a cor de fundo da seção de contato. */
     background-color: #45116c;
+    /* Arredonda as bordas da seção. */
     border-radius: 8px;
 }
 
+/* Estilos para os links de contato dentro da seção de contato. */
 .contact-links {
+    /* Usa Flexbox para organizar os links horizontalmente. */
     display: flex;
+    /* Adiciona espaço entre os links. */
     gap: 20px;
+    /* Adiciona margem superior para separar do título de contato. */
     margin-top: 10px;
+    /* Define a direção dos itens como linha (explícito para clareza). */
     flex-direction: row;
 }
 
+/* Estilos base para botões. */
 .button {
+    /* Adiciona uma borda com a cor e espessura definidas. */
     border: #b691ff 2px solid;
+    /* Adiciona padding interno ao botão. */
     padding: 10px 20px;
+    /* Arredonda as bordas do botão. */
     border-radius: 8px;
 }   
 
+/* Estilos para o botão quando o mouse passa sobre ele (hover). */
 .button:hover {
+    /* Altera a cor de fundo do botão. */
     background-color: #b691ff;
+    /* Altera a cor do texto do botão para preto. */
     color: black;
+    /* Adiciona uma transição suave para a mudança de cor de fundo. */
     transition: background-color 0.5s ease;
 }
